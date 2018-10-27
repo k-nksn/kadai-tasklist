@@ -49,6 +49,7 @@ class MessagesController extends Controller
             ]);
         
         $message = new Message;
+        $message->status = $request->status;
         $message->content = $request->content;
         $message->save();
         
@@ -94,7 +95,12 @@ class MessagesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $this->validate($request, [
+            'status' => 'required|max:10',
+            ]);
+        
         $message = Message::find($id);
+        $message->status = $request->status;
         $message->content = $request->content;
         $message->save();
 

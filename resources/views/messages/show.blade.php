@@ -4,8 +4,8 @@
 
 <h1>id = {{ $message->id }} のメッセージ詳細ページ</h1>
     
-    <p>{{ $message->status }}</p>
-    <p>{{ $message->content }}</p>
+    <p>ステータス：{{ $message->status }}</p>
+    <p>メッセージ：{{ $message->content }}</p>
     
     {!! link_to_route('messages.edit', 'このメッセージを編集', ['id' => $message->id]) !!}
     
