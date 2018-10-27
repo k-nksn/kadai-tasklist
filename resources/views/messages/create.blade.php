@@ -4,6 +4,9 @@
 
 <h1>メッセージ新規作成ページ</h1>
 {!! Form::model($message, ['route' => 'messages.store']) !!}
+
+    {!! Form::label('status', 'ステータス：') !!}
+    {!! Form::text('status') !!}
     
     {!! Form::label('content', 'メッセージ：') !!}
     {!! Form::text('content') !!}
