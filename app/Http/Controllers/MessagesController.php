@@ -44,6 +44,10 @@ class MessagesController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'status' => 'required|max:10',
+            ]);
+        
         $message = new Message;
         $message->content = $request->content;
         $message->save();
