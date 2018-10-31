@@ -3,8 +3,9 @@
 @section('content')
 
 <h1>メッセージ新規作成ページ</h1>
-
-{!! Form::model($message, ['route' => 'messages.store']) !!}
+ <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12">
+    {!! Form::model($message, ['route' => 'messages.store']) !!}
 
     <div class="form-group">
     {!! Form::label('status', 'ステータス：') !!}
@@ -18,6 +19,7 @@
     
     {!! Form::submit('投稿', ['class' => 'btn btn-primary']) !!}
 
-{!! Form::close() !!}
-
+    {!! Form::close() !!}
+    </div>
+</div>
 @endsection
